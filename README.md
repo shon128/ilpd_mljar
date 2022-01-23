@@ -1,4 +1,4 @@
-# Summary of 5_Optuna_RandomForest
+# Summary of 47_RandomForest_Stacked
 
 [<< Go back](../README.md)
 
@@ -6,17 +6,15 @@
 ## Random Forest
 - **n_jobs**: -1
 - **criterion**: gini
-- **max_features**: 0.3956043903613221
-- **min_samples_split**: 2
-- **max_depth**: 11
+- **max_features**: 0.6
+- **min_samples_split**: 30
+- **max_depth**: 7
 - **eval_metric_name**: f1
-- **min_samples_leaf**: 2
-- **max_steps**: 10
-- **explain_level**: 0
+- **explain_level**: 1
 
 ## Validation
  - **validation_type**: kfold
- - **k_folds**: 10
+ - **k_folds**: 5
  - **shuffle**: True
  - **stratify**: True
 
@@ -25,28 +23,31 @@ f1
 
 ## Training time
 
-15.1 seconds
+47.7 seconds
 
 ## Metric details
-|           |    score |   threshold |
-|:----------|---------:|------------:|
-| logloss   | 0.482645 |  nan        |
-| auc       | 0.860729 |  nan        |
-| f1        | 0.807991 |    0.478979 |
-| accuracy  | 0.798309 |    0.512158 |
-| precision | 0.964286 |    0.928016 |
-| recall    | 1        |    0        |
-| mcc       | 0.599566 |    0.512158 |
+|           |    score |    threshold |
+|:----------|---------:|-------------:|
+| logloss   | 0.46243  | nan          |
+| auc       | 0.873929 | nan          |
+| f1        | 0.83939  |   0.497512   |
+| accuracy  | 0.834541 |   0.502723   |
+| precision | 0.943662 |   0.864032   |
+| recall    | 1        |   0.00200093 |
+| mcc       | 0.670305 |   0.497512   |
 
 
-## Confusion matrix (at threshold=0.512158)
+## Confusion matrix (at threshold=0.502723)
 |              |   Predicted as 1 |   Predicted as 2 |
 |:-------------|-----------------:|-----------------:|
-| Labeled as 1 |              310 |              104 |
-| Labeled as 2 |               63 |              351 |
+| Labeled as 1 |              334 |               80 |
+| Labeled as 2 |               57 |              357 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)
+
+## Permutation-based Importance
+![Permutation-based Importance](permutation_importance.png)
 ## Confusion Matrix
 
 ![Confusion Matrix](confusion_matrix.png)
