@@ -1,21 +1,26 @@
-# Summary of 2_Optuna_Xgboost
+# Summary of 1_Optuna_LightGBM
 
 [<< Go back](../README.md)
 
 
-## Extreme Gradient Boosting (Xgboost)
+## LightGBM
 - **n_jobs**: -1
-- **objective**: binary:logistic
-- **eta**: 0.025
-- **max_depth**: 8
-- **min_child_weight**: 1
-- **subsample**: 0.4379373714678372
-- **colsample_bytree**: 0.8753138582839219
-- **eval_metric**: f1
-- **lambda**: 0.12046576655376649
-- **alpha**: 0.0005573981741589326
-- **max_rounds**: 1000
+- **objective**: binary
+- **num_leaves**: 452
+- **learning_rate**: 0.1
+- **feature_fraction**: 0.9641128533154418
+- **bagging_fraction**: 0.5027760558495366
+- **min_data_in_leaf**: 7
+- **metric**: custom
+- **custom_eval_metric_name**: f1
+- **lambda_l1**: 2.892725976120867e-07
+- **lambda_l2**: 0.00016752816537790065
+- **bagging_freq**: 2
+- **extra_trees**: False
+- **num_boost_round**: 1000
 - **early_stopping_rounds**: 50
+- **cat_feature**: []
+- **feature_pre_filter**: False
 - **explain_level**: 0
 
 ## Validation
@@ -29,25 +34,25 @@ f1
 
 ## Training time
 
-27.8 seconds
+15.5 seconds
 
 ## Metric details
 |           |    score |   threshold |
 |:----------|---------:|------------:|
-| logloss   | 0.470986 | nan         |
-| auc       | 0.866736 | nan         |
-| f1        | 0.793651 |   0.484394  |
-| accuracy  | 0.801932 |   0.623025  |
-| precision | 0.976744 |   0.867602  |
-| recall    | 1        |   0.0121952 |
-| mcc       | 0.609879 |   0.623025  |
+| logloss   | 0.461019 | nan         |
+| auc       | 0.869629 | nan         |
+| f1        | 0.832184 |   0.496883  |
+| accuracy  | 0.823671 |   0.496883  |
+| precision | 0.985294 |   0.968086  |
+| recall    | 1        |   1.317e-05 |
+| mcc       | 0.6507   |   0.496883  |
 
 
-## Confusion matrix (at threshold=0.623025)
+## Confusion matrix (at threshold=0.496883)
 |              |   Predicted as 1 |   Predicted as 2 |
 |:-------------|-----------------:|-----------------:|
-| Labeled as 1 |              361 |               53 |
-| Labeled as 2 |              111 |              303 |
+| Labeled as 1 |              320 |               94 |
+| Labeled as 2 |               52 |              362 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)
