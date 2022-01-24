@@ -1,20 +1,15 @@
-# Summary of 3_Optuna_CatBoost_Stacked
+# Summary of 4_Optuna_NeuralNetwork_Stacked
 
 [<< Go back](../README.md)
 
 
-## CatBoost
+## Neural Network
 - **n_jobs**: -1
-- **learning_rate**: 0.2
-- **depth**: 9
-- **rsm**: 0.9680881637122927
-- **loss_function**: Logloss
-- **eval_metric**: F1
-- **l2_leaf_reg**: 0.17260392951201953
-- **random_strength**: 2.790500228738866
-- **min_data_in_leaf**: 19
-- **num_boost_round**: 1000
-- **early_stopping_rounds**: 50
+- **dense_1_size**: 91
+- **dense_2_size**: 91
+- **learning_rate**: 0.05
+- **learning_rate_type**: constant
+- **alpha**: 0.0014388557265717062
 - **explain_level**: 0
 
 ## Validation
@@ -28,24 +23,24 @@ f1
 
 ## Training time
 
-14.9 seconds
+15.1 seconds
 
 ## Metric details
 |           |    score |     threshold |
 |:----------|---------:|--------------:|
-| logloss   | 0.498977 | nan           |
-| auc       | 0.858168 | nan           |
-| f1        | 0.843091 |   0.505825    |
-| accuracy  | 0.838164 |   0.505825    |
-| precision | 0.944444 |   0.954927    |
-| recall    | 1        |   0.000315148 |
-| mcc       | 0.677666 |   0.505825    |
+| logloss   | 0.577506 | nan           |
+| auc       | 0.839944 | nan           |
+| f1        | 0.806271 |   0.440738    |
+| accuracy  | 0.791063 |   0.440738    |
+| precision | 0.846667 |   0.86252     |
+| recall    | 1        |   8.66331e-31 |
+| mcc       | 0.589436 |   0.440738    |
 
 
-## Confusion matrix (at threshold=0.505825)
+## Confusion matrix (at threshold=0.440738)
 |              |   Predicted as 1 |   Predicted as 2 |
 |:-------------|-----------------:|-----------------:|
-| Labeled as 1 |              334 |               80 |
+| Labeled as 1 |              295 |              119 |
 | Labeled as 2 |               54 |              360 |
 
 ## Learning curves
