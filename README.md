@@ -1,30 +1,52 @@
-# Summary of Ensemble_Stacked
+# Summary of 3_Optuna_CatBoost_Stacked
 
 [<< Go back](../README.md)
 
 
-## Ensemble structure
-| Model                         |   Weight |
-|:------------------------------|---------:|
-| 5_Optuna_RandomForest_Stacked |        1 |
+## CatBoost
+- **n_jobs**: -1
+- **learning_rate**: 0.2
+- **depth**: 9
+- **rsm**: 0.9680881637122927
+- **loss_function**: Logloss
+- **eval_metric**: F1
+- **l2_leaf_reg**: 0.17260392951201953
+- **random_strength**: 2.790500228738866
+- **min_data_in_leaf**: 19
+- **num_boost_round**: 1000
+- **early_stopping_rounds**: 50
+- **explain_level**: 0
+
+## Validation
+ - **validation_type**: kfold
+ - **k_folds**: 10
+ - **shuffle**: True
+ - **stratify**: True
+
+## Optimized metric
+f1
+
+## Training time
+
+14.9 seconds
 
 ## Metric details
-|           |    score |   threshold |
-|:----------|---------:|------------:|
-| logloss   | 0.45042  |  nan        |
-| auc       | 0.895528 |  nan        |
-| f1        | 0.854438 |    0.500422 |
-| accuracy  | 0.851449 |    0.500422 |
-| precision | 0.952381 |    0.963346 |
-| recall    | 0.992754 |    0        |
-| mcc       | 0.703492 |    0.500422 |
+|           |    score |     threshold |
+|:----------|---------:|--------------:|
+| logloss   | 0.498977 | nan           |
+| auc       | 0.858168 | nan           |
+| f1        | 0.843091 |   0.505825    |
+| accuracy  | 0.838164 |   0.505825    |
+| precision | 0.944444 |   0.954927    |
+| recall    | 1        |   0.000315148 |
+| mcc       | 0.677666 |   0.505825    |
 
 
-## Confusion matrix (at threshold=0.500422)
+## Confusion matrix (at threshold=0.505825)
 |              |   Predicted as 1 |   Predicted as 2 |
 |:-------------|-----------------:|-----------------:|
-| Labeled as 1 |              344 |               70 |
-| Labeled as 2 |               53 |              361 |
+| Labeled as 1 |              334 |               80 |
+| Labeled as 2 |               54 |              360 |
 
 ## Learning curves
 ![Learning curves](learning_curves.png)
